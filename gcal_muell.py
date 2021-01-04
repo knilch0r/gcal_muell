@@ -1,5 +1,4 @@
 from __future__ import print_function
-import datetime
 import pickle
 import os.path
 import sys
@@ -34,7 +33,7 @@ if not creds or not creds.valid:
 service = build('calendar', 'v3', credentials=creds)
 
 # Call the Calendar API
-now = datetime.datetime.utcnow().isoformat() + 'Z' # 'Z' indicates UTC time
+now = datetime.utcnow().isoformat() + 'Z' # 'Z' indicates UTC time
 print('Getting upcoming events')
 events_result = service.events().list(calendarId='primary', timeMin=now,
                                       maxResults=250, singleEvents=False,
