@@ -59,7 +59,7 @@ for event in events:
             tr['summary'] = 'Tonne raus: R/B'
         else:
             tr['summary'] = 'Tonne raus: P/G'
-        ds = datetime.fromisoformat(event['start']['date']) - timedelta(hours=5)
+        ds = datetime.fromisoformat(event['start']['date']) - timedelta(hours=7)
         de = ds + timedelta(minutes=15)
         tr['start'] = { 'dateTime': ds.isoformat(), 'timeZone': 'Europe/Berlin' }
         tr['end'] = { 'dateTime': de.isoformat(), 'timeZone': 'Europe/Berlin' }
